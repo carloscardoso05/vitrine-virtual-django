@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    {% include 'partials/_head.html' %}
+    <title>{% block title %}Vitrine{% endblock %}</title>
+</head>
+
+<body>
+    {% include 'partials/_nav.html' %}
+    <div>
+        {% block content%}
+        {% endblock %}
+    </div>
+</body>
+<script src="{% static 'flickity/flickity.pkgd.min.js' %}"></script>
+<script src="{% static 'flickity/carousel.js' %}"></script>
+
+</html>

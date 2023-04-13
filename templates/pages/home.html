@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1 class="font-serif font-bold text-4xl text-burning-sand-400">Em destaque</h1>
+    <div class="my-12 mx-auto main-carousel">
+        {% for produto in produtos %}
+        <div class="w-96 carousel-cell">
+            <div class="relative max-w-xs mx-auto min-w-fit shadow-lg my-2">
+                <div class="flex justify-around absolute bottom-0 right-0 w-full font-semibold bg-black/20 py-1">
+                    <p class="">{{produto.nome}}</p>
+                    <p class="">R${{produto.preco}}</p>
+                </div>
+                <div class="max-w-xs">
+                    {% if produto.imagem %}
+                    <img src="{{produto.imagem.url}}" alt="imagem de {{produto.nome}}" class="w-full">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for produto in produtos %}
+        <div class="w-96 carousel-cell">
+            <div class="relative max-w-xs mx-auto min-w-fit shadow-lg my-2">
+                <div class="flex justify-around absolute bottom-0 right-0 w-full font-semibold bg-black/20 py-1">
+                    <p class="">{{produto.nome}}</p>
+                    <p class="">R${{produto.preco}}</p>
+                </div>
+                <div class="max-w-xs">
+                    {% if produto.imagem %}
+                    <img src="{{produto.imagem.url}}" alt="imagem de {{produto.nome}}" class="w-full">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+{% endblock %}
